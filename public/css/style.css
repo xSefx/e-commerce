@@ -1,0 +1,45 @@
+#nav-list {
+  text-align: end;
+}
+
+.nav-item {
+  margin-right: 15px;
+}
+
+.wrap-auth {
+  margin: 35px auto;
+  text-align: center;
+  max-width: 45%;
+}
+
+#add-product-form {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.list-product {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.list-product > div {
+  margin: 20px 20px;
+}
+
+.category-list > button {
+  margin-left: 15px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.admin-edit {
+  display: flex;
+  justify-content: space-around;
+}
+
+.admin-edit > span {
+  margin-right: 20px;
+}

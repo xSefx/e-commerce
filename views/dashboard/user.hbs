@@ -1,0 +1,121 @@
+<link rel="stylesheet"
+  href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="/css/dashboard.css">
+
+<input type="checkbox" id="nav-toggle">
+
+<div class="sidebar">
+  <div class="sidebar-brand">
+
+  </div>
+  <div class="sidebar-menu">
+    <ul>
+      <li>
+        <a href="#" class="active">
+          <span class="las la-igloo"></span>
+          <span>Личный кабинет</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <span class="las la-user-circle"></span>
+          <span>Аккаунт</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="main-content">
+  <header>
+    <h3>
+      <label for="nav-toggle">
+        <span class="las la-bars"></span>
+      </label>
+      <a href="/">На главную</a>
+    </h3>
+    <div class="user-wrapper">
+      <img src="/image/no-image.jpg" alt="user-image" width="30px" height="30px">
+      <div>
+        <h4>{{userName}}</h4>
+        <small>Категория: User</small>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="recent-grid">
+      <div class="projects">
+        <div class="card">
+          <div class="card-header">
+            <h3>Мои объявления</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <td>
+                      Название
+                    </td>
+                    <td>
+                      Категория
+                    </td>
+                    <td>
+                      Статус
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each productList}}
+                  <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.category.name}}</td>
+                    <td>
+                      {{#if checked}}
+                      {{#if archive}}
+                      В архиве
+                      {{else}}
+                      Активно
+                      {{/if}}
+                      {{else}}
+                      Ожидает проверки
+                      {{/if}}
+                    </td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="customers">
+        <div class="card">
+          <div class="card-header">
+            <h3>Мои подписки</h3>
+          </div>
+
+          <div class="card-body">
+            <div class="customer">
+              <div class="info">
+                <img src="/image/no-image.jpg" alt="user-img" width="40px" height="40px">
+                <div>
+                  <h4>Lewis Cunningan</h4>
+                </div>
+              </div>
+              <div class="contact">
+                <span class="las la-user-circle"></span>
+                <span class="las la-comment"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

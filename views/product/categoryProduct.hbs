@@ -1,0 +1,14 @@
+{{#if productList.length}}
+{{#each productList}}
+<div class="card" style="width: 13rem;">
+  <img src="/image/no-image.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.name}}</h5>
+    <p class="card-text">{{this.description}}</p>
+    <a href="/product/{{this._id}}" class="btn btn-primary">Подробнее</a>
+  </div>
+</div>
+{{/each}}
+{{else}}
+<h4> Нет объявлений в указаной категории</h4>
+{{/if}}

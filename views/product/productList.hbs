@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/style.css">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Цена</th>
+      <th scope="col">Пользователь</th>
+      <th scope="col">Статус</th>
+      <th scope="col">Кнопки всевластия</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.user.email}}</td>
+      <td>
+        {{#if checked}}
+        {{#if archive}}
+        В архиве
+        {{else}}
+        Активно
+        {{/if}}
+        {{else}}
+        Ожидает проверки
+        {{/if}}
+      </td>
+      <td id='{{this._id}}' class="admin-edit">
+        <span class="las la-check-circle" data-type="product"></span>
+        <span class="las la-trash" data-type="product"></span>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

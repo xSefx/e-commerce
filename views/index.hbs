@@ -1,0 +1,31 @@
+<script src="/js/index.js" defer></script>
+
+<div class="container">
+  <h3>Категория</h3>
+  <ul class="category-list">
+    <a href="/product/allProduct" class="btn btn-primary">Все категории</a>
+
+    {{#each categoryList}}
+    <button class="btn btn-primary" data-btn="category-btn" id="{{this._id}}">{{this.name}}</button>
+    {{/each}}
+  </ul>
+
+  {{!-- <select class="form-select">
+    <option value="data">По дате</option>
+    <option value="price-up">Дешевле</option>
+    <option value="price-down">Дороже</option>
+  </select> --}}
+
+  <ul class="list-product">
+    {{#each productList}}
+    <div class="card" style="width: 13rem;">
+      <img src="/image/no-image.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{this.name}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <a href="/product/{{this._id}}" class="btn btn-primary">Подробнее</a>
+      </div>
+    </div>
+    {{/each}}
+  </ul>
+</div>

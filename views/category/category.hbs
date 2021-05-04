@@ -1,0 +1,80 @@
+<div class="projects">
+  <div class="card">
+    <div class="card-header">
+      <h3>Список категорий</h3>
+    </div>
+
+    <div class="card-body">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <td>
+                Категория
+              </td>
+              <td>
+                Количество товаров
+              </td>
+              <td>
+
+              </td>
+            </tr>
+          </thead>
+          <tbody id='category-full-list'>
+            {{#each allCategory}}
+            <tr>
+              <td>{{this.name}}</td>
+              <td>in progress...</td>
+              <td>
+                <div class="contact" id='{{this._id}}' data-name="{{this.name}}">
+                  <span class="lar la-edit" data-type="category"></span>
+                  <span class="las la-trash" data-type="category"></span>
+                </div>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="customers">
+  <div class="card">
+    <div class="card-header">
+      <h4 class="form-title">Добавить категорию</h4>
+    </div>
+    <div class="error-message"></div>
+    <div class="card-body">
+      <div class="customer">
+        <form method="POST" action="/category" id="category-add-form">
+          <div class="mb-3">
+            <label for="field-name" class="form-label">Название категории</label>
+            <input type="text" class="form-control" id="field-name" name='name'>
+          </div>
+          <div class="mb-3">
+            <label for="field-icon" class="form-label">Иконка</label>
+            <input type="text" class="form-control" id="field-icon" name='icon'>
+          </div>
+          <button class="btn btn-primary" id="add-category-btn">Добавить</button>
+        </form>
+
+        <form method="POST" action="/category" id="edit-category">
+          <div class="mb-3">
+            <label for="edit-name" class="form-label">Название категории</label>
+            <input type="text" class="form-control" id="edit-name" name='name'>
+          </div>
+          <div class="mb-3">
+            <label for="edit-icon" class="form-label">Иконка</label>
+            <input type="text" class="form-control" id="edit-icon" name='icon'>
+          </div>
+          <button type="button" class="btn btn-primary" id="edit-category-btn">Сохранить</button>
+          <button type="button" class="btn btn-danger" id="esc">Отмена</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

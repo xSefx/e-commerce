@@ -1,0 +1,32 @@
+<script defer src="/js/product/product.js"></script>
+
+<div id="add-product-form">
+  <h2 class="ui header">Добавить объявление</h2>
+  <div class="error-message">
+  </div>
+  <form data-user-id="{{login}}">
+    <div class="mb-3">
+      <label for="add-name-product" class="form-label">Название</label>
+      <input type="text" class="form-control" id="add-name-product" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="add-price-product" class="form-label">Цена</label>
+      <input type="number" class="form-control" id="add-price-product" name="price">
+    </div>
+    <div class="mb-3">
+      <label for="add-desc-product" class="form-label" >Описание</label>
+      <textarea class="form-control" id="add-desc-product" rows="3" name="description"></textarea>
+    </div>
+    <div class="mb-3">
+      <select class="form-select" name="caterory">
+        {{#each caterory}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="mb-3">
+      <input type="file" class="form-control" id="inputGroupFile03" aria-label="Upload">
+    </div>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+  </form>
+</div>
